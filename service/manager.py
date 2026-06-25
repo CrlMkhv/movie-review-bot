@@ -9,7 +9,7 @@ class ServiceManager:
     def __init__(self):
         self.llm = LLMClient()
         self.matcher = MovieMatcher(os.path.join(BASE_DIR, "data", "kp_final.csv"))
-        self.loader = ReviewLoader(r"C:\Users\Kirill\Work\archive_review\dataset")
+        self.loader = ReviewLoader(os.path.join(BASE_DIR, "data", "dataset"))
 
     def handle_query(self, query: str):
         extracted = self.llm.extract_movie_title(query)
